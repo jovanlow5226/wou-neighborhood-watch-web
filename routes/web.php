@@ -9,6 +9,7 @@ use App\Http\Controllers\OwnerTenantDashboardController;
 use App\Http\Controllers\Management\RegistrationController;
 use App\Http\Controllers\Management\FacilityManagementController;
 use App\Http\Controllers\Management\BookingManagementController;
+use App\Http\Controllers\Management\LostAndFoundManagementController;
 use App\Http\Controllers\CommunityController;
 use App\Http\Controllers\Resident\FacilityController;
 use App\Http\Controllers\Resident\BookingController;
@@ -49,6 +50,7 @@ Route::get('/community', [CommunityController::class, 'index'])->name('community
 Route::get('/facilities', [FacilityController::class, 'index'])->name('facilities.index');
 Route::get('/facilities/list', [FacilityController::class, 'list'])->name('facilities.list');
 Route::get('/lost-and-found', [LostAndFoundController::class, 'index'])->name('lost_and_found.index');
+Route::get('/lost-and-found-management', [LostAndFoundManagementController::class, 'index'])->name('lost_and_found.page');
 
 
 
@@ -69,3 +71,5 @@ Route::post('/lost-and-found', [LostAndFoundController::class, 'store'])->name('
 Route::get('/lost-and-found/{id}', [LostAndFoundController::class, 'show'])->name('lost_and_found.show');
 Route::post('/lost-and-found/search', [LostAndFoundController::class, 'search'])->name('lost_and_found.search');
 Route::patch('/lost-and-found/{lostItem}/found', [LostAndFoundController::class, 'markAsFound'])->name('lost_and_found.markAsFound');
+Route::get('/lost-and-found-management/{id}', [LostAndFoundManagementController::class, 'showLostItem'])->name('lost_and_found.showLostItem');
+Route::post('/lost-and-found-management/{id}/update', [LostAndFoundManagementController::class, 'updateStatus'])->name('lost_and_found.page');

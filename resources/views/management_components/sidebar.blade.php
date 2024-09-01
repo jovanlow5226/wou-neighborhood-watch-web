@@ -27,8 +27,13 @@
                     </a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link nav-link {{ Request::is('lost-and-found-management') ? 'active' : '' }}" href="/lost-and-found-management">
+                        <i class="fas fa-search mr-1"></i> Lost and Found
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="#">
-                        <i class="fas fa-exclamation-triangle mr-1"></i> Complaints
+                        <i class="fas fa-exclamation-triangle mr-1"></i> Feedback
                     </a>
                 </li>
                 <li class="nav-item">

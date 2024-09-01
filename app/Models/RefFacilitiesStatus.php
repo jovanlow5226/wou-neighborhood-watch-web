@@ -1,18 +1,23 @@
-<?php
-
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class RefFacilitiesStatus extends Model
+class FoundItem extends Model
 {
     use HasFactory;
 
-    protected $table = 'ref_facilities_statuses';
-
     protected $fillable = [
-        'name',
-        'active',
+        'title', 'description', 'location', 'image_path', 'contact_info', 'category_id', 'user_id'
     ];
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

@@ -29,7 +29,7 @@ class LostAndFoundController extends Controller
             'name' => $user->name,
             'email' => $user->email,
         ];
-        $lostItems = LostItem::all();
+        $lostItems = LostItem::paginate(5); // Paginate with 10 items per page
         $categories = Category::all();
         return view('lost_and_found.index', compact('user_details','lostItems','categories'));
     }
